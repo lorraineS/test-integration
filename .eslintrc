@@ -1,0 +1,60 @@
+{
+  "plugins": ["@typescript-eslint", "tailwindcss"],
+  "extends": [
+    "plugin:tailwindcss/recommended",
+    "next/core-web-vitals",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",
+    "object-curly-newline": "off",
+    "react/destructuring-assignment": "off", // Allow non-defined react props as undefined
+    "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
+    "react-hooks/exhaustive-deps": "off", // Incorrectly report needed dependency with Next.js router
+    "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+    "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+    "@typescript-eslint/no-unused-vars": [
+      // Use _ for unused variables
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/require-default-props": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "endOfLine": "auto",
+        "printWidth": 125,
+        "trailingComma": "all"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "type"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/prefer-default-export": "off",
+
+    "max-len": "off"
+  }
+}
