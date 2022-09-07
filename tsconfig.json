@@ -59,9 +59,4 @@
     "**/*.ts",
     "**/*.tsx"
   ],
-  "paths": {
-    "@components/*": ["./components/*"],
-    "@gtypes/*": ["./types/*"],
-    "@utils/*": ["./utils/*"],
-  },
 }
