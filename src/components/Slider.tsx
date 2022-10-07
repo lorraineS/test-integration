@@ -24,7 +24,7 @@ const Slider: FC = () => {
     <div className="py-5 sm:max-w-[310px] mx-auto overflow-hidden">
         {/*
             Si besoin d'avoir un temps dynamique en fonction des slides,
-            nous pourrons utiliser la valeur arbitraire suivante : animate-[slide_9s_linear_3s_forwards]
+            nous pourrons utiliser la valeur arbitraire suivante : {`animate-[slide_${nbr_slides * 3}s_linear_3s_forwards]`}
         */}
         <div className="animate-slide flex justify-start">
             <SliderItem
